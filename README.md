@@ -1,6 +1,6 @@
 # GitDIR
 
-GitDIR is a Python Flask API that allows you to interact with the filesystem directory as if it were a git repository over HTTPS. The application provides a simple API for managing your directory operations.
+GitDIR is a Python Flask API that allows you to interact with a filesystem directory as if it were a GIT repository over HTTPS.
 
 ## Features
 
@@ -37,10 +37,11 @@ The server can be configured with the following command-line arguments:
 - `--dir` or `-d`: Directory to serve (default: current directory)
 - `--port` or `-p`: Port to run the server on (default: 5000)
 - `--host`: Host to run the server on (default: 127.0.0.1)
+- `--debug`: Enable debug mode for development
 
 Example with custom configuration:
 ```bash
-./venv/bin/python gitdir.py --dir /path/to/directory --port 8080 --host 0.0.0.0
+./venv/bin/python gitdir.py --dir /path/to/directory --port 8080 --host 0.0.0.0 --debug
 ```
 
 ## Implementation Details

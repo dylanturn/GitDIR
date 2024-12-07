@@ -425,8 +425,8 @@ def ls_files():
 
 def parse_args():
     parser = argparse.ArgumentParser(description='GitDIR - Serve a directory as a git repository')
-    parser.add_argument('--dir', '-d', 
-                      default=os.getcwd(),
+    parser.add_argument('--dir', '-d',
+                      default='.',
                       help='Directory to serve (default: current directory)')
     parser.add_argument('--port', '-p',
                       type=int,
@@ -435,10 +435,13 @@ def parse_args():
     parser.add_argument('--host',
                       default='127.0.0.1',
                       help='Host to run the server on (default: 127.0.0.1)')
+    parser.add_argument('--debug',
+                      action='store_true',
+                      help='Enable debug mode')
     return parser.parse_args()
 
 if __name__ == '__main__':
     args = parse_args()
     TARGET_DIR = os.path.abspath(args.dir)
     print(f"Serving directory: {TARGET_DIR}")
-    app.run(host='127.0.0.1', port=5009, debug=True)
+    app.run(host=args.host, port=args.port, debug=args.debug)
