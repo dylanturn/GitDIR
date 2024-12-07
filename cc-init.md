@@ -1,0 +1,1 @@
+Please review @cc-prompt.md and update the @README.md based on the requirements it has right now
